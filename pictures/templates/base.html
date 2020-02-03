@@ -1,0 +1,39 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Photo|Gallery {{title}}</title>
+  {% else %}
+    <title> Photo|Gallery </title>
+  {% endif %}
+
+  {% block styles %}
+    {% bootstrap_css %}
+  {% endblock %}
+
+</head>
+<body>
+        {% include "navbar.html" %}
+    {% block content %} 
+    {%endblock%}
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/clipboard.js' %}"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btnl');
+        clipboard.on('success', function(e) {
+            console.log(e);
+        });
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+      </script>
+{% endblock %}
+</html>
