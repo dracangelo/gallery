@@ -1,0 +1,49 @@
+<div class="container">
+                
+      <!-- Looping through images   -->
+{%  for image in images %}
+      
+<!--Display images  -->
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 jik">
+    <button class="btnl" data-clipboard-text="http://127.0.0.1:8000{{pic.image.url}}">
+      Copy photo 
+  </button>
+
+<!-- image trigger modal -->
+<img src="{{image.image.url}}" alt="" srcset="" class="img-responsive" data-toggle="modal" data-target="#myModal-{{pic.id}}">
+
+<!-- Modal -->
+<div class="modal fade" id="myModal-{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h2 class="modal-title" id="myModalLabel">{{pic.name}}</h2>
+  </div>
+  <div class="modal-body">
+    <img src="{{image.image.url}}" alt="" srcset="" class="img-responsive" >
+    <hr>
+    {% autoescape off %}
+    <h5>{{image.description}}</h5>
+    {% endautoescape %}
+    <h5 class="mid">Location -- {{image.location}}</h5>
+  </div>
+  
+</div>
+</div>
+</div>
+
+</div>
+          
+  
+      
+{% empty %}
+<div class="row">
+<h2 class="text-center">There No Posts on that serach term </h2>
+</div>
+{% endfor %}
+</div>       
+}
+
+
+{% endblock %}
