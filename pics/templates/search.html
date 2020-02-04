@@ -1,3 +1,9 @@
+{% extends 'base.html'%}
+{% load bootstrap3 %}
+{% block content %}
+{{bock.super}}
+
+    <!-- posts -->
 <div class="container">
                 
       <!-- Looping through images   -->
@@ -39,7 +45,7 @@
       
 {% empty %}
 <div class="row">
-<h2 class="text-center">There Are No Posts on that search term </h2>
+<h2 class="text-center">There No Posts on that search term </h2>
 </div>
 {% endfor %}
 </div>       
