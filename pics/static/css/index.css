@@ -1,0 +1,13 @@
+.navbar-default .navbar-brand {
+    color: #000000;
+        }
+.navbar{
+          padding-top: 2%;
+          background-color: #ffffff;
+          border: #ffffff;
+      }
+.btn-default {
+    color: #777777;
+    background-color: #fff;
+    border-color: #ccc;
+    }

@@ -5,7 +5,7 @@ from . import views
 
 
 urlpatterns=[
-    url(r'',views.landing,name='landing'),
+    url(r'^$',views.landing,name='landing'),
     url(r'^search/$',views.search,name='search'),
     url(r'^locations/$',views.places,name='places'),
     url(r'^locations/somewhere/$',views.somewhere,name='somewhere'),
@@ -17,5 +17,5 @@ urlpatterns=[
     
    ]
 
-if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

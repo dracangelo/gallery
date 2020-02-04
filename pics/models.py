@@ -54,7 +54,7 @@ class Location(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'picha/', null = True, blank = True)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=60)
     description = models.CharField(max_length=200)
     category = models.ForeignKey('Category', on_delete = models.CASCADE, null='True', blank=True)
     location = models.ForeignKey('Location', on_delete = models.CASCADE, null='True', blank=True)
